@@ -20,7 +20,7 @@ def home():
             new_note = Note(data=note, user_id=current_user.id)
             db.session.add(new_note)
             db.session.commit()
-            flash('Note added and well kept! \U0001F92B', category='success')
+            flash('Note added and well-kept! \U0001F92B', category='success')
     return render_template("home.html", user=current_user)
 
 
