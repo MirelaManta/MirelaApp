@@ -9,7 +9,7 @@ views = Blueprint('views', __name__)  # views as a blueprint means that is has a
 
 # creating the routes(the URLs where users can actually go to)
 @views.route('/', methods=['GET', 'POST'])
-@ login_required  # cannot go to the home page unless you're logged in
+@login_required  # cannot go to the home page unless you're logged in
 def home():
     if request.method == 'POST':
         note = request.form.get('note')
@@ -34,3 +34,21 @@ def delete_note():
             db.session.delete(note)
             db.session.commit()
     return jsonify({})
+
+
+@views.route('/update-note', methods=['POST', 'GET'])
+def update_note():
+    note = json.loads(request.data)
+    noteId = note['noteId']
+    newData = note['noteData'].strip()
+    note = Note.query.get(noteId)
+
+    if note:
+        if note.user_id == current_user.id and note.data != newData:
+            # print(note.data)
+            # print(newData)
+            note.data = newData
+            db.session.commit()
+            flash("Note edited successfully!", category="success")
+    return jsonify({})
+
