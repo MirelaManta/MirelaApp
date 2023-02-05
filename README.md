@@ -1,16 +1,17 @@
-Mirela's Secret Notes App
+## __Mirela's Secret Notes App__ ##
 
-Summary: I've created a small application where you can sign up, login and store whatever "secret notes" you want to. They are going to be password protected, so well-kept. Just give it a try.
+### ___Summary:___ ###  
+__I've created a small application where you can sign up, login and store whatever "secret notes" you want to. They are going to be password protected, so well-kept. As log as you don't logout on purpose, the app will remember the last session and you'll stay in your account at runtime. Just give it a try. :relaxed:__
 
-Setup and installation:\
+### ___Setup and installation:___ ###
 -> make sure you have installed the latest Python version\
--> git clone <repo-url>\
--> pip install requirements.txt
+-> git clone <https://github.com/MirelaManta/MirelaApp>\
+-> pip install -r requirements.txt
 
-To run the app:\
+### ___To run the app:___ ###
 -> run main.py
 
-To view the app:\
+### ___To view the app:___ ###
 -> go to http://127.0.0.1:5000
 
 
