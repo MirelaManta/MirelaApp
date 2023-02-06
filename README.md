@@ -20,3 +20,8 @@ pyton main.py
 Go to 
 ``` http://127.0.0.1:5000 ```
 
+### ___Link to web application on hosting platform: PythonAnywhere___ ###
+```
+http://mirela.pythonanywhere.com/
+```
+
