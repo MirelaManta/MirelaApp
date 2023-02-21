@@ -22,7 +22,7 @@ def login():
             else:
                 flash('Incorrect password, please try again.',  category='error')
         else:
-            flash('Email does not exist, please sign up.', category='error')
+            flash('Email does not exist, please sign up.', category='info')
     return render_template("login.html", user=current_user)
 
 
@@ -46,7 +46,7 @@ def sign_up():
         if user:
             flash('There is an account associated with this email. ', category='error')
         elif not (email and first_name and password1 and password2):
-            flash('All fields are required!')
+            flash('All fields are required!', category="error")
         elif len(email) < 4:
             flash('Email must be greater than 3 characters.', category='error')
         elif len(first_name) < 3:

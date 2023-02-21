@@ -11,11 +11,14 @@
     {% for note in user.notes %}
         <li class="list-group-item float-right">
             <div class = "float-left">
-               <p id={{ note.id }} contentEditable="false"> {{ note.data }} </p>
+               <p id={{ note.id }}  role="textbox" style="margin-top: 5px; padding: 10px; border-radius: 5px;"
+                  contentEditable="false"> {{ note.data }} </p>
             </div>
             <div class="float-right">
-                <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
-                         data-placement="top" title="Edit"><i class="fa fa-edit" onClick="updateNote({{ note.id}})"></i></button>
+                <button class="btn btn-success btn-sm rounded-0" type="button" data-container="body" data-toggle="popover"
+                        data-placement="bottom" title="Edit & Save"
+                        data-content="One click to edit the note and a second click to have it saved.🤗">
+                    <i class="fa fa-edit" onClick="updateNote({{ note.id}})"></i></button>
                 <button type="button" class="btn btn-danger btn-sm rounded-0" data-toggle="tooltip" data-placement="right"
                         title="Delete"><i class="fa fa-trash" onClick="deleteNote({{ note.id }})"></i></button>
             </div>

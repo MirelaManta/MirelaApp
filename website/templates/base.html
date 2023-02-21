@@ -84,5 +84,10 @@ inside our HTML documents>
                 type="text/javascript"
                 src="{{ url_for('static', filename='index.js') }}"
         ></script>
+    <script>
+        $(document).ready(function(){
+             $('[data-toggle="popover"]').popover();
+         });
+    </script>
     </body>
 </html>
