@@ -22,7 +22,7 @@ def login():
             else:
                 flash('Incorrect password, please try again.',  category='error')
         else:
-            flash('Email does not exist, please sign up.', category='info')
+            flash('Email does not exist, please sign up.', category='error')
     return render_template("login.html", user=current_user)
 
 
